@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "QC9000",
+  "description": "Compare copy with pages",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs","<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+
+      "js": [ "jquery-1.11.3.min.js", "content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
